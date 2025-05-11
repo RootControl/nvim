@@ -14,5 +14,15 @@ return {
         vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
         vim.keymap.set('n', '<leader>vh', builtin.help_tags, { desc = 'Telescope help tags' })
         vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
+
+        vim.keymap.set('n', '<leader>pw', function()
+            builtin.grep_string({ search = vim.fn.expand("<cword>") })
+        end,
+        { desc = 'Telescope grep word under cursor' })
+
+        vim.keymap.set('n', '<leader>pW', function()
+            builtin.grep_string({ search = vim.fn.expand("<cWORD>") })
+        end,
+        { desc = 'Telescope grep WORD under cursor' })
     end
 }
