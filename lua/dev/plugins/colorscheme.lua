@@ -1,5 +1,6 @@
 return {
 	"folke/tokyonight.nvim",
+    name = 'tokyonight',
 	-- make sure we load this during startup
 	-- if is your main colorscheme
 	lazy = false, 
