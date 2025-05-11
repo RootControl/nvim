@@ -1,12 +1,19 @@
+function ColorThisNuts(color)
+    color = color or "habamax"
+    vim.cmd.colorscheme(color)
+
+    vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+end
+
 return {
 	"folke/tokyonight.nvim",
     name = 'tokyonight',
-	-- make sure we load this during startup
-	-- if is your main colorscheme
 	lazy = false, 
 
-	-- make sure to load this
-	-- before all the other start plugins
-	opts = {
-	},
+    opts = {},
+
+    config = function()
+        ColorThisNuts()
+    end
 }
