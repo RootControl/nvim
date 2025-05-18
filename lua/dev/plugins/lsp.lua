@@ -11,7 +11,6 @@ return {
 	},
 
 	config = function()
-		local cmp = require("cmp")
 		local cmp_lsp = require("cmp_nvim_lsp")
 
 		local capabilities = vim.tbl_deep_extend(
@@ -33,23 +32,6 @@ return {
 				function(server_name)
 					require("lspconfig")[server_name].setup({
 						capabilities = capabilities,
-					})
-				end,
-				["lua_ls"] = function()
-					local lspconfig = require("lspconfig")
-					lspconfig.lua_ls.setup({
-						capabilities = capabilities,
-						settings = {
-							Lua = {
-								format = {
-									enable = true,
-									defaultConfig = {
-										indent_style = "space",
-										indent_size = "2",
-									},
-								},
-							},
-						},
 					})
 				end,
 			},

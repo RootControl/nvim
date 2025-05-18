@@ -13,6 +13,14 @@ return {
 	},
 	build = ":TSUpdate",
 	config = function()
+		require("nvim-treesitter.configs").setup({
+			highlight = {
+				enable = true,
+				additional_vim_regex_highlighting = false,
+			},
+			ensure_installed = { "go", "c_sharp" },
+		})
+
 		require("nvim-treesitter").setup({
 			ensure_installed = {
 				"vimdoc",
@@ -37,6 +45,7 @@ return {
 				"rego",
 				"ruby",
 				"sql",
+				"html",
 			},
 			auto_install = true,
 			ident = {
@@ -44,7 +53,7 @@ return {
 			},
 			highlight = {
 				enable = true,
-				additional_vim_regex_highlighting = { "markdown" },
+				additional_vim_regex_highlighting = false,
 			},
 			textobjects = {
 				select = {
