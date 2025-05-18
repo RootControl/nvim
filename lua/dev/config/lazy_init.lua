@@ -33,7 +33,7 @@ require("lazy").setup({
 
 	-- Configure an other settings here. See the documentation for more details.
 	-- colorscheme that will be used when installing plugins.
-	install = { colorscheme = { "habamax" } },
+	install = { colorscheme = { "tokyonight", "catppuccin" } },
 
 	-- automatically check for plugin updates
 	checker = { enable = true },

@@ -1,19 +1,18 @@
-function ColorThisNuts(color)
-    color = color or "habamax"
-    vim.cmd.colorscheme(color)
-
-    vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-end
-
 return {
-	"folke/tokyonight.nvim",
-    name = 'tokyonight',
-	lazy = false, 
+	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("catppuccin").setup({
+				transparent_background = true,
+			})
 
-    opts = {},
+			vim.cmd.colorscheme("catppuccin")
 
-    config = function()
-        ColorThisNuts()
-    end
+			vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+			vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+		end,
+	},
 }
